@@ -45,15 +45,15 @@ public protocol WLEmptyStateDataSource: AnyObject {
 public extension WLEmptyStateDataSource {
     
     func imageForEmptyDataSet() -> UIImage? {
-        DefaultEmptyState.image
+        return nil
     }
     
     func titleForEmptyDataSet() -> NSAttributedString {
-        DefaultEmptyState.title
+        return DefaultEmptyState.title
     }
     
     func descriptionForEmptyDataSet() -> NSAttributedString {
-        DefaultEmptyState.description
+        return DefaultEmptyState.description
     }
     
     func customViewForEmptyState() -> UIView? {
@@ -68,14 +68,6 @@ public extension WLEmptyStateDataSource {
 
 
 enum DefaultEmptyState {
-    
-    static var image: UIImage? {
-        if #available(iOS 13.0, *) {
-            return UIImage(systemName: "info.circle")
-        } else {
-            return nil
-        }
-    }
     
     static var title: NSAttributedString {
         NSAttributedString(string: EmptyStateView.DefaultConstants.title, attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .headline)])
