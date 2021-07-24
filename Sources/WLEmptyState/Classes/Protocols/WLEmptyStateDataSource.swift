@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 /// This protocol provides the table view object with the information it needs to construct and modify a `EmptyStateView`.
-public protocol WLEmptyStateDataSource: class {
+public protocol WLEmptyStateDataSource: AnyObject {
     
     /// Asks the data source for the description of the `EmptyStateView`.
     ///

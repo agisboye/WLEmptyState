@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol WLEmptyStateDelegate: class {
+public protocol WLEmptyStateDelegate: AnyObject {
     
     /// Enables/Disables the scroll when the Empty State is showing.
     func enableScrollForEmptyState() -> Bool
