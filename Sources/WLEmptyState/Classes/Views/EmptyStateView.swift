@@ -42,7 +42,6 @@ final class EmptyStateView: UIView {
     
     lazy var titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
-        label.backgroundColor = .background
         label.textAlignment = .center
         label.accessibilityTraits = [.header]
         return  label
@@ -50,7 +49,6 @@ final class EmptyStateView: UIView {
     
     lazy var descriptionLabel: UILabel = {
         let label = UILabel(frame: .zero)
-        label.backgroundColor = .background
         label.numberOfLines = 0
         label.textAlignment = .center
         return  label
