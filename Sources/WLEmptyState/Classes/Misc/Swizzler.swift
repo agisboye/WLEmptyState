@@ -13,7 +13,11 @@ struct Swizzler {
     static func swizzleMethods(for sourceClass: AnyClass?, originalSelector: Selector, swizzledSelector: Selector) {
         guard let originalMethod = class_getInstanceMethod(sourceClass, originalSelector),
             let swizzledMethod = class_getInstanceMethod(sourceClass, swizzledSelector) else {
-            os_log(.error, "Didn't find selector to swizzle")
+            if #available(iOS 12.0, *) {
+                os_log(.error, "Didn't find selector to swizzle")
+            } else {
+                NSLog("Didn't find selector to swizzle")
+            }
             return
         }
         

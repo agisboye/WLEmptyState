@@ -70,7 +70,11 @@ public extension WLEmptyStateDataSource {
 enum DefaultEmptyState {
     
     static var image: UIImage? {
-        return UIImage(systemName: "info.circle")
+        if #available(iOS 13.0, *) {
+            return UIImage(systemName: "info.circle")
+        } else {
+            return nil
+        }
     }
     
     static var title: NSAttributedString {

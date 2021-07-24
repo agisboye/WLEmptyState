@@ -10,9 +10,21 @@ import UIKit
 extension UIColor {
 
     static var accent: UIColor = {
-        UIColor { traitCollection in
-            traitCollection.userInterfaceStyle == .dark ? .white : .black
+        if #available(iOS 13.0, *) {
+            return UIColor { traitCollection in
+                traitCollection.userInterfaceStyle == .dark ? .white : .black
+            }
+        } else {
+            return .black
         }
     }()
+    
+    static var background: UIColor {
+        if #available(iOS 13.0, *) {
+            return .systemBackground
+        } else {
+            return .white
+        }
+    }
 
 }

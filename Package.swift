@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "WLEmptyState",
-    platforms: [.iOS(.v12)],
+    platforms: [.iOS(.v11)],
     products: [
         .library(
             name: "WLEmptyState",
